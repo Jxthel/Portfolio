@@ -3,301 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio - Graphic Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+
+        /* Header of website */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 40px;
+        }
+
+        /* Navbar text */
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        /* Navbar buttons of website */
+        .inicio-btn,
+        .acerca-de-btn,
+        .galería-btn {
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        .contact-btn {
+            background: #649B62;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            transition: 0.2s;
+            background-color: #5b8b59;
+        }
+
+        /* Text or Landing part of website */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+        }
+
+        .hero p {
+            color: gray;
+        }
+
+        .hero .cta {
+            background: #649B62;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .hero .cta:hover {
+            transition: 0.2s;
+            background-color: #5b8b59;
+        }
+
+        /* About me section of website */
+        .about {
+            text-align: center;
+            padding: 50px;
+            background: white;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Contact form of website */
+        .contact-section {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background-color: #649B62;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            transition: 0.2s;
+            background-color: #5b8b59;
+        }
+
+        /* Footer of website */
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-links a:hover {
+            color: #007BFF;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero .cta {
+                padding: 8px 16px;
+            }
+
+            .about {
+                padding: 30px;
+            }
+
+            .skills {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .contact-section {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .footer-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .skills {
+                gap: 10px;
+            }
+
+            .footer-container {
+                padding: 10px;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
-    <style>body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f8f8f8;
-}
-
-
-/*Header of website*/
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: white;
-}
-.logo img {
-    width: 100%;
-    height: 40px;
-}
-
-
-
-
-
-/*Navbar text*/
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
-
-
-
-
-
-
-/*Navbar buttons of website*/
-.inicio-btn{
-    color: black;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-.acerca-de-btn{
-    color: black;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-.galería-btn{
-    color: black;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-.contact-btn {
-    background: #649B62;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-.contact-btn:hover{
-    transition: 0.2s;
-    background-color: #5b8b59;
-}
-
-
-
-/*Text or Landing part of website*/
-
-.hero {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 50px;
-}
-.hero-text {
-    max-width: 500px;
-}
-.hero h1 {
-    font-size: 36px;
-}
-.hero p {
-    color: gray;
-}
-.hero .cta {
-    background: #649B62;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.hero .cta:hover{
-    transition: 0.2s;
-    background-color: #5b8b59;
-}
-
-
-
-
-
-
-/*About me section of website*/
-
-.about {
-    text-align: center;
-    padding: 50px;
-    background: white;
-}
-.about h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-.skills {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-.skill {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #e0e0e0;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.skill img {
-    width: 30px;
-    height: 30px;
-}
-
-
-
-
-
-
-
-/*Contact form of website*/
-
-.contact-section {
-    background-color: #fff;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.contact-form input, 
-.contact-form textarea {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.contact-form button {
-    padding: 12px;
-    background-color: #649B62;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    transition: 0.2s;
-    background-color: #5b8b59;
-}
-
-@media (max-width: 600px) {
-    .contact-section {
-        margin: 20px;
-        padding: 20px;
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-/*Footer of website*/
-
-.footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.footer-container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 10px;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer-links a:hover {
-    color: #007BFF;
-}
-
-.social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-}</style>
-
-
-    
-
-
-<!--Header and Navbar-->
-
+    <!-- Header and Navbar -->
     <header>
         <div class="logo">
             <img src="./Icon/my logo.png">
         </div>
         <nav>
             <a href="#hero" class="inicio-btn">Inicio</a>
-            <a href="./Gallery.html"class="galería-btn">Galería</a>
+            <a href="./Gallery.html" class="galería-btn">Galería</a>
             <a href="./Contact.html" class="contact-btn">Contacto</a>
         </nav>
     </header>
 
-
-
-
-
-<!--Main introduction-->
-
+    <!-- Main introduction -->
     <section class="hero">
         <div class="hero-text">
             <h1>Hola,<br>soy Jathel, una diseñador gráfico con un sueño y pasión por mi trabajo.</h1>
@@ -306,13 +318,7 @@ h2 {
         </div>
     </section>
 
-
-
-
-    
-
-<!--about me section-->
-
+    <!-- About me section -->
     <section class="about">
         <h2>Acerca de mí</h2>
         <p>Diseñador gráfico creativo y dedicado con experiencia en múltiples campos, incluidos el branding, la animación 2D y 3D, la fotografía, la cinematografía, los diseñadores web, los desarrolladores web y el diseño de marketing.<br>Me apasiona el aprendizaje continuo y la entrega de diseños de alta calidad.</p>
@@ -326,26 +332,17 @@ h2 {
             <div class="skill"><img src="./Icon/indesign.png" alt="Indesign"> Indesign</div>
             <div class="skill"><img src="./Icon/figma.png" alt="Figma"> Figma</div>
             <div class="skill"><img src="./Icon/DaVinci_Resolve_Studio.png" alt="Davinci Resolve"> Davinci Resolve</div>
+        </div>
     </section>
 
-
-
-
-
-
-<!--Footer-->
-
-<footer class="footer">
-    <div class="footer-container">
-        <p>&copy; 2025 Jathel's Portfolio. Todos los derechos reservados.</p>
-        <div class="social-icons">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Jathel's Portfolio. Todos los derechos reservados.</p>
+            <div class="social-icons">
+            </div>
         </div>
-    </div>
-</footer>
-
-    
-
-
+    </footer>
 
 </body>
 </html>
