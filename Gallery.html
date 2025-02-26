@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Graphic Designer</title>
+</head>
+<body>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +14,6 @@
             padding: 0;
             background: #f8f8f8;
         }
-        
         header {
             display: flex;
             justify-content: space-between;
@@ -19,12 +21,10 @@
             padding: 20px;
             background: white;
         }
-
         .logo img {
+            width: auto;
             height: 35px;
-            width: auto; /* Ensure the logo scales properly */
         }
-
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -32,10 +32,8 @@
             font-weight: 500;
         }
 
-        .inicio-btn,
-        .acerca-de-btn,
-        .galería-btn,
-        .contact-btn {
+        .inicio-btn, .acerca-de-btn, .galería-btn, .contact-btn {
+            color: black;
             padding: 8px 15px;
             border-radius: 20px;
             text-decoration: none;
@@ -64,7 +62,7 @@
 
         .gallery-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 20px;
             max-width: 1400px;
             margin: auto;
@@ -78,7 +76,6 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /*-- Videos Section --*/
         .video-section {
             text-align: center;
             padding: 50px 20px;
@@ -102,8 +99,7 @@
             max-width: 560px;
         }
 
-        .video iframe,
-        .video video {
+        .video iframe, .video video {
             object-fit: cover;
             width: 100%;
             height: 360px;
@@ -159,18 +155,8 @@
             height: 30px;
         }
 
-        /* Media Queries */
+        /* Mobile and Tablet Adjustments */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav a {
-                margin: 10px 0;
-                font-size: 16px;
-            }
-
             .gallery h1 {
                 font-size: 2em;
             }
@@ -180,93 +166,44 @@
             }
 
             .gallery-content {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                padding: 10px;
-            }
-
-            .video-section h2 {
-                font-size: 1.8em;
+                grid-template-columns: 1fr 1fr;
+                padding: 0 10px;
             }
 
             .video-container {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .video {
-                width: 90%;
-            }
-
-            .footer-container {
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 10px;
-            }
-
-            .logo img {
-                height: 30px;
-            }
-
-            nav a {
-                font-size: 14px;
-            }
-
-            .gallery h1 {
-                font-size: 1.8em;
-            }
-
-            .gallery h2 {
-                font-size: 1.2em;
-            }
-
-            .gallery-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                padding: 10px;
-            }
-
-            .video-container {
-                flex-direction: column;
-                gap: 15px;
+                padding: 0 20px;
             }
 
             .video {
                 max-width: 100%;
             }
+
+            .footer-container {
+                padding: 5px;
+            }
         }
 
-        @media (orientation: landscape) {
-            /* Specific landscape view optimizations */
-            header {
-                padding: 25px;
-            }
-
-            .gallery h1 {
-                font-size: 3em;
-            }
-
-            .video-section h2 {
-                font-size: 2em;
+        /* Landscape mode */
+        @media (orientation: landscape) and (max-width: 768px) {
+            .gallery-content {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
             }
 
             .video-container {
                 flex-direction: row;
             }
+
+            .video {
+                max-width: 45%;
+            }
         }
     </style>
-</head>
-<body>
 
-    <!-- Header -->
     <header>
         <div class="logo">
-            <img src="./Icon/my logo.png" alt="Logo">
+            <img src="./Icon/my logo.png">
         </div>
         <nav>
             <a href="./index.html" class="inicio-btn">Inicio</a>
@@ -275,30 +212,29 @@
         </nav>
     </header>
 
-    <!-- Gallery Section -->
     <section class="gallery">
         <h1>Galería</h1>
+        <br>
         <h2>Fotografía</h2>
         <div class="gallery-content">
-            <img src="../Portfolio website/img/dog.jpg" alt="Dog">
-            <img src="../Portfolio website/img/city landscape angle.jpg" alt="City Landscape">
-            <img src="../Portfolio website/img/citylandscape.jpg" alt="City Landscape">
-            <img src="../Portfolio website/img/moon.jpg" alt="Moon">
-            <img src="../Portfolio website/img/lic musica.jpg" alt="Music">
-            <img src="../Portfolio website/img/keren y andre2.jpg" alt="Keren & Andre">
-            <img src="../Portfolio website/img/keren y andre.jpg" alt="Keren & Andre">
-            <img src="../Portfolio website/img/fruit.jpg" alt="Fruit">
-            <img src="../Portfolio website/img/foto.jpg" alt="Photo">
-            <img src="../Portfolio website/img/flower.jpg" alt="Flower">
-            <img src="../Portfolio website/img/Steph y mau.jpg" alt="Steph & Mau">
-            <img src="../Portfolio website/img/keren.jpg" alt="Keren">
-            <img src="../Portfolio website/img/hermana de torres.jpg" alt="Hermana de Torres">
-            <img src="../Portfolio website/img/jonathan.jpg" alt="Jonathan">
-            <img src="../Portfolio website/img/IMG_5655.jpg" alt="IMG">
+            <img src="../Portfolio website/img/dog.jpg">
+            <img src="../Portfolio website/img/city landscape angle.jpg">
+            <img src="../Portfolio website/img/citylandscape.jpg">
+            <img src="../Portfolio website/img/moon.jpg">
+            <img src="../Portfolio website/img/lic musica.jpg">
+            <img src="../Portfolio website/img/keren y andre2.jpg">
+            <img src="../Portfolio website/img/keren y andre.jpg">
+            <img src="../Portfolio website/img/fruit.jpg">
+            <img src="../Portfolio website/img/foto.jpg">
+            <img src="../Portfolio website/img/flower.jpg">
+            <img src="../Portfolio website/img/Steph y mau.jpg">
+            <img src="../Portfolio website/img/keren.jpg">
+            <img src="../Portfolio website/img/hermana de torres.jpg">
+            <img src="../Portfolio website/img/jonathan.jpg">
+            <img src="../Portfolio website/img/IMG_5655.jpg">
         </div>
     </section>
 
-    <!-- Video Section -->
     <section class="video-section">
         <h2>Galería de animación</h2>
         <div class="video-container">
@@ -308,14 +244,14 @@
                     Tu navegador no soporta la reproducción de videos.
                 </video>
             </div>
-            <!-- Additional videos here -->
+            <!-- Repeat the above video div for other videos -->
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <p>&copy; 2025 Jathel's Portfolio. Todos los derechos reservados.</p>
+            <div class="social-icons"></div>
         </div>
     </footer>
 
