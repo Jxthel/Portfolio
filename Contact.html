@@ -4,106 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Graphic Designer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f8f8;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: white;
-        }
-        .logo img {
-            height: 40px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: black;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-        .contact-btn {
-            background: #649B62;
-            color: white;
-        }
-        .contact-btn:hover {
-            background-color: #5b8b59;
-        }
-        .contact-section {
-            background-color: #fff;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .contact-form button {
-            padding: 12px;
-            background-color: #649B62;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .contact-form button:hover {
-            background-color: #5b8b59;
-        }
-        .footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-    </style>
 </head>
 <body>
+
+    <style>    
+    body {    
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f8f8;
+    }
+
+    .main-content {
+        flex: 1;
+    }
+    
+    footer {
+        margin-top: 253px;
+    }
+
+
+    /*Header of website*/
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: white;
+    }
+    .logo img {
+        width: 100%;
+        height: 40px;
+    }
+
+
+
+    /*Navbar text*/
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+    }
+
+
+
+
+
+
+
+    /*Navbar buttons of website*/
+    .inicio-btn{
+        color: black;
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    .acerca-de-btn{
+        color: black;
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    .galería-btn{
+        color: black;
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    .contact-btn {
+        background: #649B62;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    .contact-btn:hover{
+        transition: 0.2s;
+        background-color: #5b8b59;
+    }
+
+
+
+
+
+
+
+
+
+
+    /*Contact form of website*/
+
+    .contact-section {
+        background-color: #fff;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-form label {
+        font-weight: bold;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-form button {
+        padding: 12px;
+        background-color: #649B62;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .contact-form button:hover {
+        transition: 0.2s;
+        background-color: #5b8b59;
+    }
+
+    @media (max-width: 600px) {
+        .contact-section {
+            margin: 20px;
+            padding: 20px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*Footer of website*/
+
+    .footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer-container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .footer-links a:hover {
+        color: #007BFF;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    </style>
+
+
+
+
+
+
+
+<!--Header and Navbar-->
+
     <header>
         <div class="logo">
-            <img src="./Icon/my logo.png" alt="Logo">
+            <img src="./Icon/my logo.png">
         </div>
         <nav>
-            <a href="../Portfolio website/index.html">Inicio</a>
-            <a href="../Portfolio website/Gallery.html">Galería</a>
+            <a href="../Portfolio website/index.html" class="inicio-btn">Inicio</a>
+            <a href="../Portfolio website/Gallery.html"class="galería-btn">Galería</a>
             <a href="#" class="contact-btn">Contacto</a>
         </nav>
     </header>
-    <section class="contact-section">
-        <h2>Contáctame</h2>
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="d676a32c-76b3-4a8a-89a1-1faa96f3880b">
-            <label for="name">Tu Nombre</label>
-            <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
-            <label for="email">Tu Correo Electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Tu Correo Electrónico" required>
-            <label for="message">Tu Mensaje</label>
-            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" rows="4" required></textarea>
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-    <footer class="footer">
+
+
+
+
+
+
+<!--contact form-->
+
+<section class="contact-section">
+    <h2>Contáctame</h2>
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d676a32c-76b3-4a8a-89a1-1faa96f3880b">
+        
+        <label for="name">Tu Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+        
+        <label for="email">Tu Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Tu Correo Electrónico" required>
+        
+        <label for="message">Tu Mensaje</label>
+        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" rows="4" required></textarea>
+        
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+
+
+
+
+
+
+<!--Footer-->
+
+<footer class="footer">
+    <div class="footer-container">
         <p>&copy; 2025 Jathel's Portfolio. Todos los derechos reservados.</p>
-    </footer>
+        <div class="social-icons">
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
