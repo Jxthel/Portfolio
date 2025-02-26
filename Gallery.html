@@ -13,18 +13,27 @@
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5% 5%;
-            background: white;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    max-width: 100%;  /* Ensure the header doesn't overflow */
+}
 
-        .logo img {
-            width: auto;
-            height: 35px;
-        }
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 120px;  /* Smaller logo on tablets */
+    }
+}
 
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px;  /* Even smaller logo on mobile */
+    }
+}
+
+        /* Navbar text */
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -32,7 +41,10 @@
             font-weight: 500;
         }
 
-        .inicio-btn, .acerca-de-btn, .galería-btn, .contact-btn {
+        /* Navbar buttons of website */
+        .inicio-btn,
+        .acerca-de-btn,
+        .galería-btn {
             color: black;
             padding: 8px 15px;
             border-radius: 20px;
@@ -42,7 +54,16 @@
         .contact-btn {
             background: #649B62;
             color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
         }
+
+        .contact-btn:hover {
+            transition: 0.2s;
+            background-color: #5b8b59;
+        }
+        
 
         .gallery {
             text-align: center;
