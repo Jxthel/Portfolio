@@ -27,69 +27,94 @@
     /*Header of website*/
 
     header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        background: white;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    max-width: 100%;  /* Ensure the header doesn't overflow */
+}
+
+.logo img {
+    max-width: 50px;  /* Control the size of the logo on large screens */
+    height: auto;      /* Maintain the aspect ratio */
+    width: auto;       /* Prevent logo stretching */
+}
+
+@media (max-width: 768px) {
     .logo img {
-        width: 100%;
-        height: 40px;
+        max-width: 120px;  /* Smaller logo on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px;  /* Even smaller logo on mobile */
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+/* Media Queries for smaller devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+    
+    .logo img {
+        max-height: 30px; /* Adjust logo height on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
     }
 
-
-
-    /*Navbar text*/
+    .logo img {
+        max-height: 25px; /* Adjust logo height on extra small screens */
+    }
 
     nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: black;
-        font-weight: 500;
+        margin: 10px 0;
     }
+}
 
+        /* Navbar buttons of website */
+        .inicio-btn,
+        .acerca-de-btn,
+        .galería-btn {
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
 
+        .contact-btn {
+            background: #649B62;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
 
-
-
-
-
-    /*Navbar buttons of website*/
-    .inicio-btn{
-        color: black;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-
-    .acerca-de-btn{
-        color: black;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-
-    .galería-btn{
-        color: black;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-
-    .contact-btn {
-        background: #649B62;
-        color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-
-    .contact-btn:hover{
-        transition: 0.2s;
-        background-color: #5b8b59;
-    }
-
+        .contact-btn:hover {
+            transition: 0.2s;
+            background-color: #5b8b59;
+        }
 
 
 
