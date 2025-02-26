@@ -17,19 +17,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 5%;
+    padding: 15px 20px;
     background: white;
+    max-width: 100%;  /* Ensure the header doesn't overflow */
+}
+
+.logo img {
+    max-width: 150px;  /* Control the size of the logo on large screens */
+    height: auto;      /* Maintain the aspect ratio */
+    width: auto;       /* Prevent logo stretching */
 }
 
 @media (max-width: 768px) {
     .logo img {
-        max-height: 40px;  /* Smaller logo on medium screens */
+        max-width: 120px;  /* Smaller logo on tablets */
     }
 }
 
 @media (max-width: 480px) {
     .logo img {
-        max-height: 30px;  /* Even smaller logo on mobile screens */
+        max-width: 100px;  /* Even smaller logo on mobile */
     }
 }
 
