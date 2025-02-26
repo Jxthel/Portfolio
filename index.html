@@ -13,35 +13,59 @@
             background: #f8f8f8;
         }
 
-        /* Header of website */
        header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 5% 5%;
     background: white;
-    max-width: 100%;  /* Ensure the header doesn't overflow */
 }
 
+.logo img {
+    max-width: 100%;  /* Ensure the image can scale down */
+    height: auto;     /* Maintain aspect ratio */
+    max-height: 35px; /* Restrict maximum height */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+/* Media Queries for smaller devices */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+    
     .logo img {
-        max-width: 120px;  /* Smaller logo on tablets */
+        max-height: 30px; /* Adjust logo height on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
     .logo img {
-        max-width: 100px;  /* Even smaller logo on mobile */
+        max-height: 25px; /* Adjust logo height on extra small screens */
+    }
+
+    nav a {
+        margin: 10px 0;
     }
 }
-
-        /* Navbar text */
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: black;
-            font-weight: 500;
-        }
 
         /* Navbar buttons of website */
         .inicio-btn,
