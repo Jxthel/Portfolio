@@ -22,10 +22,17 @@
             background: white;
         }
 
-        .logo img {
-            max-width: 100%;  /* Ensure it doesn't exceed the container's width */
-            height: auto;     /* Keep the aspect ratio intact */
-        }
+        @media (max-width: 768px) {
+    .logo img {
+        max-height: 40px;  /* Smaller logo on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 30px;  /* Even smaller logo on mobile screens */
+    }
+}
 
         /* Navbar text */
         nav a {
