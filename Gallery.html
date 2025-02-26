@@ -4,331 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Graphic Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+        }
+        .logo img {
+            width: auto;
+            height: 35px;
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        .contact-btn {
+            background: #649B62;
+            color: white;
+        }
+        .gallery {
+            text-align: center;
+            padding: 50px;
+            background: white;
+        }
+        .gallery h1, .gallery h2 {
+            margin-bottom: 30px;
+        }
+        .gallery-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .gallery-content img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .video-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f4f9;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .video {
+            width: 100%;
+            max-width: 560px;
+        }
+        .video video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
-
-    <style>body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f8f8f8;
-    }
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        background: white;
-    }
-    .logo img {
-        width: auto;
-        height: 35px;
-    }
-    nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: black;
-        font-weight: 500;
-    }
-    
-    
-    
-    
-    .inicio-btn{
-        color: black;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-    
-    .acerca-de-btn{
-        color: black;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-    
-    .galería-btn{
-        color: black;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-    
-    .contact-btn {
-        background: #649B62;
-        color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-    }
-    
-    .gallery {
-        text-align: center;
-        padding: 50px;
-        background: white;
-    }
-    
-    
-    .gallery h1 {
-        font-size: 2.5em;
-        margin-bottom: 30px;
-    }
-    
-    .gallery h2 {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-    .gallery-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 20px;
-        max-width: 1400px;
-        margin: auto;
-    }
-    .gallery-content img{
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    
-    
-    
-    
-    
-    
-    /*--videos--*/
-    
-    .video-section {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: #f4f4f9;
-    }
-    
-    .video-section h2 {
-        color: #333;
-        margin-bottom: 20px;
-    }
-    
-    .video-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .video {
-        width: 100%;
-        max-width: 560px;
-    }
-    
-    .video iframe,
-    .video video {
-        object-fit: cover;
-        width: 100%;
-        height: 360px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    
-    
-    
-    
-    
-    /*Footer of website*/
-    
-    .footer {
-        background-color: #222;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-    }
-    
-    .footer-container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 10px;
-    }
-    
-    .footer-links {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .footer-links li {
-        display: inline;
-        margin: 0 15px;
-    }
-    
-    .footer-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    
-    .footer-links a:hover {
-        color: #007BFF;
-    }
-    
-    .social-icons {
-        margin-top: 10px;
-    }
-    
-    .social-icons a {
-        display: inline-block;
-        margin: 0 10px;
-    }
-    
-    .social-icons img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    </style>
-
-
-
-
-
     <header>
         <div class="logo">
-            <img src="./Icon/my logo.png">
+            <img src="./Icon/my-logo.png" alt="Logo">
         </div>
         <nav>
-            <a href="./index.html" class="inicio-btn">Inicio</a>
-            <a href="#"class="galería-btn">Galería</a>
+            <a href="./index.html">Inicio</a>
+            <a href="#">Galería</a>
             <a href="./Contact.html" class="contact-btn">Contacto</a>
         </nav>
     </header>
-
-
     <section class="gallery">
         <h1>Galería</h1>
-        <br>
         <h2>Fotografía</h2>
         <div class="gallery-content">
-            <img src="../Portfolio website/img/dog.jpg">
-            <img src="../Portfolio website/img/city landscape angle.jpg">
-            <img src="../Portfolio website/img/citylandscape.jpg">
-            <img src="../Portfolio website/img/moon.jpg">
-            <img src="../Portfolio website/img/lic musica.jpg">
-            <img src="../Portfolio website/img/keren y andre2.jpg">
-            <img src="../Portfolio website/img/keren y andre.jpg">
-            <img src="../Portfolio website/img/fruit.jpg">
-            <img src="../Portfolio website/img/foto.jpg">
-            <img src="../Portfolio website/img/flower.jpg">
-            <img src="../Portfolio website/img/Steph y mau.jpg">
-            <img src="../Portfolio website/img/keren.jpg">
-            <img src="../Portfolio website/img/hermana de torres.jpg">
-            <img src="../Portfolio website/img/jonathan.jpg">
-            <img src="../Portfolio website/img/IMG_5655.jpg">
+            <img src="../Portfolio-website/img/dog.jpg" alt="Dog">
+            <img src="../Portfolio-website/img/city-landscape-angle.jpg" alt="City Landscape">
+            <img src="../Portfolio-website/img/moon.jpg" alt="Moon">
+        </div>
     </section>
-
-
-
-
-
-
-
-<!--Videos & animations-->
-
     <section class="video-section">
         <h2>Galería de animación</h2>
-        
         <div class="video-container">
-
-
-            <!-- Video desde un archivo local -->
             <div class="video">
                 <video controls>
-                    <source src="../Portfolio website/videos/logo_animations_1.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
+                    <source src="../Portfolio-website/videos/logo_animations_1.mp4" type="video/mp4">
                 </video>
             </div>
-    
-
             <div class="video">
                 <video controls>
-                    <source src="../Portfolio website/videos/NBC_V01.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
+                    <source src="../Portfolio-website/videos/NBC_V01.mp4" type="video/mp4">
                 </video>
             </div>
-    
-            
-            <div class="video">
-                <video controls>
-                    <source src="../Portfolio website/videos/NBC_V02.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div>
-
-
-            <div class="video">
-                <video controls>
-                    <source src="../Portfolio website/videos/NBC_V03.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div>
-    
-            
-            <div class="video">
-                <video controls>
-                    <source src="../Portfolio website/videos/nike_logo_animation_V1.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div>
-
-
-            <div class="video">
-                <video controls>
-                    <source src="../Portfolio website/videos/pizza_hut_logo.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div>
-    
-            
-            <div class="video">
-                <video controls>
-                    <source src="../Portfolio website/videos/price-home-logo.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div>
-
-
-            <div class="video">
-                <video controls>
-                    <source src="../Portfolio website/videos/stitch_1.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-            </div>
-
-
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-    <!--Footer-->
-
-<footer class="footer">
-    <div class="footer-container">
+    <footer class="footer">
         <p>&copy; 2025 Jathel's Portfolio. Todos los derechos reservados.</p>
-        <div class="social-icons">
-        </div>
-    </div>
-</footer>
-
-
+    </footer>
 </body>
 </html>
