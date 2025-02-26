@@ -21,10 +21,16 @@
     background: white;
 }
 
-.logo img {
-    max-width: 100%;  /* Ensure the image can scale down */
-    height: auto;     /* Maintain aspect ratio */
-    max-height: 35px; /* Restrict maximum height */
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 40px;  /* Smaller logo on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 30px;  /* Even smaller logo on mobile screens */
+    }
 }
 
 nav {
