@@ -23,24 +23,22 @@
 }
 
 .logo img {
-    max-width: 120px;  /* Control the size of the logo on large screens */
+    max-width: 50px;  /* Control the size of the logo on large screens */
     height: auto;      /* Maintain the aspect ratio */
     width: auto;       /* Prevent logo stretching */
 }
 
- 
-@media (max-width: 768) {
+@media (max-width: 768px) {
     .logo img {
         max-width: 120px;  /* Smaller logo on tablets */
     }
 }
 
-
-@media (max-width: 420) {
+@media (max-width: 480px) {
     .logo img {
-        max-width: 45px;  /* Even smaller logo on mobile */
+        max-width: 100px;  /* Even smaller logo on mobile */
     }
-
+}
 
 nav {
     display: flex;
