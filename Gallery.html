@@ -289,52 +289,19 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* prevent page scroll inside modal */
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
-    /* add flexbox to center content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .modal-content {
+    display: block;
+    margin: auto;
     max-width: 90%;
     max-height: 80vh;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-    z-index: 2001;
-    user-select: none;
 }
 
-.nav-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 3px;
-    user-select: none;
-    transition: background-color 0.3s;
-    z-index: 2002;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-.nav-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Close button */
 .close {
     position: absolute;
     top: 30px;
@@ -343,26 +310,52 @@
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 2003;
-    user-select: none;
 }
 
 .close:hover {
     color: #bbb;
 }
 
-/* On small screens, make navigation buttons a bit smaller and closer */
-@media (max-width: 480px) {
-    .nav-btn {
-        font-size: 24px;
-        padding: 12px;
-    }
+/* Navigation buttons */
+.nav-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.3s;
+    z-index: 2001;
+}
 
-    .close {
-        top: 20px;
-        right: 20px;
-        font-size: 30px;
-    }
+.nav-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.prev {
+    left: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Hide modal and nav buttons on devices smaller than 1024px */
+@media (max-width: 1023px) {
+  #imageModal {
+    display: none !important;
+  }
+
+  .nav-btn {
+    display: none !important;
+  }
 }
 
     }
@@ -482,52 +475,51 @@
         </div>
     </footer>
 
-    <!-- Enhanced Image Modal -->
-<div id="imageModal" class="modal">
-    <span class="close" onclick="closeImageModal()">&times;</span>
-    <img class="modal-content" id="modalImg">
+    <!-- Modal structure -->
+<div id="imageModal" class="modal" style="display:none;">
+    <span class="close nav-btn" onclick="closeImageModal()">&times;</span>
+    <img class="modal-content" id="modalImg" />
     <a class="nav-btn prev" onclick="navigateImage(-1)">&#10094;</a>
     <a class="nav-btn next" onclick="navigateImage(1)">&#10095;</a>
   </div>
 
   <script>
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-    const galleryImages = Array.from(document.querySelectorAll(".gallery-content img"));
-    let currentIndex = 0;
+    // Check if device is desktop (width >= 1024px)
+    if (window.innerWidth >= 1024) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      const galleryImages = Array.from(document.querySelectorAll(".gallery-content img"));
+      let currentIndex = 0;
   
-    galleryImages.forEach((img, index) => {
-      img.addEventListener("click", function () {
-        currentIndex = index;
-        openImageModal();
+      galleryImages.forEach((img, index) => {
+        img.addEventListener("click", function () {
+          currentIndex = index;
+          openImageModal();
+        });
       });
-    });
   
-    function openImageModal() {
-      modal.style.display = "block";
-      modalImg.src = galleryImages[currentIndex].src;
-    }
-  
-    function closeImageModal() {
-      modal.style.display = "none";
-    }
-  
-    function navigateImage(direction) {
-      currentIndex += direction;
-      if (currentIndex < 0) currentIndex = galleryImages.length - 1;
-      if (currentIndex >= galleryImages.length) currentIndex = 0;
-      modalImg.src = galleryImages[currentIndex].src;
-    }
-  
-    // Prevent closing modal when clicking navigation or image
-    modal.addEventListener("click", function(e) {
-      if (
-        e.target === modal || 
-        e.target.classList.contains("close")
-      ) {
-        closeImageModal();
+      function openImageModal() {
+        modal.style.display = "flex";  // modal uses flex in CSS
+        modalImg.src = galleryImages[currentIndex].src;
       }
-    });
+  
+      function closeImageModal() {
+        modal.style.display = "none";
+      }
+  
+      function navigateImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+        if (currentIndex >= galleryImages.length) currentIndex = 0;
+        modalImg.src = galleryImages[currentIndex].src;
+      }
+  
+      modal.addEventListener("click", function(e) {
+        if (e.target === modal || e.target.classList.contains("close")) {
+          closeImageModal();
+        }
+      });
+    }
   </script>
 
 </body>
