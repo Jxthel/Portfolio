@@ -289,19 +289,52 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden; /* prevent page scroll inside modal */
     background-color: rgba(0, 0, 0, 0.9);
+    /* add flexbox to center content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    display: block;
-    margin: auto;
     max-width: 90%;
     max-height: 80vh;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    z-index: 2001;
+    user-select: none;
 }
 
+.nav-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 3px;
+    user-select: none;
+    transition: background-color 0.3s;
+    z-index: 2002;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Close button */
 .close {
     position: absolute;
     top: 30px;
@@ -310,41 +343,26 @@
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 2003;
+    user-select: none;
 }
 
 .close:hover {
     color: #bbb;
 }
 
-/* Navigation buttons */
-.nav-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    transition: 0.3s;
-    z-index: 2001;
-}
+/* On small screens, make navigation buttons a bit smaller and closer */
+@media (max-width: 480px) {
+    .nav-btn {
+        font-size: 24px;
+        padding: 12px;
+    }
 
-.nav-btn:hover {
-    background-color: rgba(255,255,255,0.2);
-}
-
-.prev {
-    left: 10px;
-    border-radius: 3px 0 0 3px;
-}
-
-.next {
-    right: 10px;
-    border-radius: 0 3px 3px 0;
+    .close {
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+    }
 }
 
     }
