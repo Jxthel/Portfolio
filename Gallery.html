@@ -302,20 +302,6 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
 }
 
-.close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #bbb;
-}
-
 /* Navigation buttons */
 .nav-btn {
     cursor: pointer;
@@ -477,7 +463,6 @@
 
     <!-- Modal structure -->
 <div id="imageModal" class="modal" style="display:none;">
-    <span class="close nav-btn" onclick="closeImageModal()">&times;</span>
     <img class="modal-content" id="modalImg" />
     <a class="nav-btn prev" onclick="navigateImage(-1)">&#10094;</a>
     <a class="nav-btn next" onclick="navigateImage(1)">&#10095;</a>
