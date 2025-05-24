@@ -509,6 +509,21 @@
           closeImageModal();
         }
       });
+
+        function openImageModal() {
+    modal.style.display = "flex";
+    modalImg.src = galleryImages[currentIndex].src;
+  
+    // Disable page scrolling
+    document.body.style.overflow = "hidden";
+}
+
+    function closeImageModal() {
+    modal.style.display = "none";
+  
+    // Re-enable page scrolling
+    document.body.style.overflow = "";
+}
     }
   </script>
 
